@@ -1,0 +1,6 @@
+{
+  "appTitle": "flutter_taquin",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
