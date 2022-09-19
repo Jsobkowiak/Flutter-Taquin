@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_taquin/src/taquin.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -8,7 +9,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void test() {}
+  Taquin taquin = Taquin.create();
+  void nouvellegame() {
+    setState(() {
+      taquin = Taquin.create();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +31,8 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisCount: 3,
             children: List.generate(9, (index) {
               return Center(
-                child: TextButton(onPressed: test, child: Text("$index")),
+                child:
+                    TextButton(onPressed: nouvellegame, child: Text("$index")),
               );
             }),
           )),
